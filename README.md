@@ -36,6 +36,6 @@ Results will look something like:
  ```
 
 To make it accessible (expose it):
-'> oc expose service springbootrest'
+`> oc expose service springbootrest`
 
 ![Screenshot](./.screens/2017-07-17.png?raw=true)
