@@ -1,5 +1,5 @@
 # OpenShift Examples - SpringBoot REST Service
-Example simple SOLR search running on Open Shift
+Example SpringBoot app running on OpenShift
 
 Requires the [OpenShift Java S2I builder image](https://access.redhat.com/containers/#/registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift)
 
