@@ -1,5 +1,5 @@
 # OpenShift Examples - SpringBoot REST Service
-Example SpringBoot app running on OpenShift
+Example SpringBoot app running on OpenShift with Actuator enabled.
 
 Requires the [OpenShift Java S2I builder image](https://access.redhat.com/containers/#/registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift)
 
@@ -7,6 +7,8 @@ To build/run it:
 `> oc new-app redhat-openjdk18-openshift~https://github.com/dudash/openshiftexamples-springbootrestservice.git --context-dir='complete' --name=springbootrest`
 
 The above command uses the `redhat-openjdk18-openshift` container image from your OpenShift cluster as a builder.  It fetches the code from the referenced github URI, then it creates all the resources needed for Kubernetes and OpenShift, then it does a springboot specific build, then it containerizes the build results, and then it deploys that built image into your cluster.
+
+To see actuator endpoints, [check this link](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html)
 
 Results will look something like:
 ```
