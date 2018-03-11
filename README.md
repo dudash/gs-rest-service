@@ -54,6 +54,8 @@ To make it accessible (expose it):
 
 Once the build finishes, [Actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html) will be enabled and we hook up those endpoins for health checks in OpenShift.
 
+    :information_desk_person: You can also do the above steps by switching the build to point to this gitrepo's `actuator` branch.
+
 3. Hook them up in the console by going to the springbootrest Deployment, click the Configuration tab, click "Add Health Checks" (map liveness to /status with 45 sec deplay and readiness to /health with a 10 sec delay)
 
 OR use the CLI with:
