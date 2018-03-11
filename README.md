@@ -1,8 +1,6 @@
 # OpenShift Examples - SpringBoot REST Service
 Example SpringBoot app running on OpenShift
 
-###### :information_source: This example is based on OpenShift Container Platform version 3.7.  It should work with older versions but has not been tested.
-
 Requires the [OpenShift Java S2I builder image](https://access.redhat.com/containers/#/registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift)
 
 To build/run it:
