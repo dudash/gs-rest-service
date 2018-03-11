@@ -41,4 +41,27 @@ To make it accessible (expose it):
 ![Screenshot](./.screens/2017-07-17.png?raw=true)
 
 
+## Extra Credit - give it some health checks
+1. Edit the `complete/pom.xml` file and add the following into your dependencies section:
+```
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+```
+
+2. Kick off a rebuild of the source in the console via "Start Build" or in the CLI via `oc start-build springbootrest`
+
+Once the build finishes, [Actuator](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html) will be enabled and we hook up those endpoins for health checks in OpenShift.
+
+3. Hook them up in the console by going to the springbootrest Deployment, click the Configuration tab, click "Add Health Checks" (map liveness to /status with 45 sec deplay and readiness to /health with a 10 sec delay)
+
+OR use the CLI with:
+* ```oc set probe dc/springbootrest --readiness --get-url=http://:8080/health --initial-delay-seconds=10```
+* ```oc set probe dc/springbootrest --liveness --get-url=http://:8080/status --initial-delay-seconds=45```
+
+And notice that since we a doing a rolling deployment type, the old app won't go away until the new changes are ready and deployed.
+
+-----
+
 To see the original README [click here](README-orig.adoc)
