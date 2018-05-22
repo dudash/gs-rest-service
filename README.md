@@ -60,7 +60,7 @@ Once the build finishes, [Actuator](https://docs.spring.io/spring-boot/docs/curr
 
 OR use the CLI with:
 * ```oc set probe dc/springbootrest --readiness --get-url=http://:8080/health --initial-delay-seconds=10```
-* ```oc set probe dc/springbootrest --liveness --get-url=http://:8080/status --initial-delay-seconds=45```
+* ```oc set probe dc/springbootrest --liveness --get-url=http://:8080/info --initial-delay-seconds=45```
 
 And notice that since we a doing a rolling deployment type, the old app won't go away until the new changes are ready and deployed.
 
